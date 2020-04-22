@@ -1,0 +1,280 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var columns = [['api', 'elb', 'cloudfront']];
+        var mapObj = [
+  [
+    'https://gateway.clari.com/refresh/version?viewType=web',
+    1623.7350000010338,
+    1471.8049999992218
+  ],
+  [
+    'https://gateway.clari.com/refresh/channel?viewType=web',
+    1526.2149999998655,
+    1449.6449999987817
+  ],
+  [
+    'https://gateway.clari.com/status?viewType=web&includeAllModes=true',
+    5076.435000000856,
+    5417.410000000018
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/jobmetadata?viewType=web',
+    233.90000000108557,
+    533.9550000007875
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/frontend-timing',
+    237.9350000010163,
+    454.2700000001787
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/notifications?viewType=web&showAll=false',
+    234.07500000030268,
+    578.8050000010116
+  ],
+  [
+    'https://gateway.clari.com/connect/v2core/connect/user?viewType=web',
+    343.4349999988626,
+    464.5200000013574
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/user-state/connect?viewType=web',
+    343.0100000005041,
+    380.74999999844295
+  ],
+  [
+    'https://gateway.clari.com/connect/v2core/connect/usersearch?terms=&start=0&viewType=web',
+    368.5249999998632,
+    656.2799999992421
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/helios/bulk-authorize?targetUserId=46226&request=%7B%22resourceTypes%22:%7B%22USER_MANAGEMENT%22:[%22READ_IN_IMPERSONATION%22]%7D%7D&viewType=web',
+    459.21500000076776,
+    528.8949999994657
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/helios/bulk-authorize?targetUserId=84&request=%7B%22resourceTypes%22:%7B%22PRIVATE_SAVED_DASHBOARD%22:[%22SHARE%22],%22SHARED_SAVED_DASHBOARD%22:[%22DELETE%22,%22SHARE%22,%22UPDATE%22],%22QUOTA_MANAGEMENT%22:[%22UPDATE%22],%22AUTOCAPTURE_CONFIG%22:[%22UPDATE%22],%22HIERARCHY_CONFIG%22:[%22UPDATE%22],%22DASHBOARD_MANAGEMENT%22:[%22READ%22],%22USER_MANAGEMENT%22:[%22FORECAST_OPTIN%22,%22GRANT_USER_ACCESS%22,%22IMPERSONATE_ROLE%22,%22IMPERSONATE_USER%22,%22PROVISION_USER%22,%22READ%22,%22READ_IN_IMPERSONATION%22,%22REVOKE_USER_ACCESS%22,%22UPDATE_GLOBAL_VIEW%22,%22UPDATE_ROLE%22],%22SHARED_SAVED_VIEW%22:[%22DELETE%22,%22SHARE%22,%22UPDATE%22],%22PRIVATE_SAVED_VIEW%22:[%22SHARE%22],%22ANALYTICS_CONFIG%22:[%22READ%22,%22UPDATE%22],%22ACTIVITY_ADMIN%22:[%22UPDATE%22],%22ROLE_MEMBERSHIP%22:[%22UPDATE%22],%22SV_MANAGEMENT%22:[%22READ%22]%7D%7D&viewType=web',
+    528.4100000008038,
+    544.3150000010064
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/spec/default?viewType=web&mode=IC_OWNER_MODE',
+    599.145000000135,
+    958.7850000007165
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/spec/default?viewType=web&mode=OPPORTUNITY_MODE',
+    633.960000001025,
+    846.7400000008638
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/spec/default?viewType=web&mode=CUSTOM_SE_OWNER_MODE',
+    656.2899999989895,
+    1003.099999999904
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/spec/default?viewType=web&mode=CUSTOM_CSMD_OWNER_MODE',
+    760.1599999998143,
+    863.5299999987183
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/lens/possible-fields?viewType=web',
+    761.1800000013318,
+    535.9850000004371
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/jobmetadata/viewed?viewType=web',
+    541.8349999999919,
+    328.6950000001525
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/spec/default?viewType=web&mode=CUSTOM_PRODUCT_CSMD_MODE',
+    807.6550000005227,
+    922.9550000000017
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/spec/default?viewType=web&mode=OPPORTUNITY_BY_PRODUCT_MODE',
+    860.5049999987386,
+    1462.9449999993085
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/frontend-timing?viewType=web',
+    218.29999999863503,
+    379.03000000005704
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/spec/default?viewType=web&mode=CUSTOM_SDR_OWNER_MODE',
+    984.9500000000262,
+    962.5800000012532
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/lens/opportunitysplit.splitownerid?viewType=web',
+    212.13999999963562,
+    210.46000000023923
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/lens/opportunity.ownerid?viewType=web',
+    221.2099999997008,
+    220.419999999649
+  ],
+  [
+    'https://gateway.clari.com/connect/v2core/connect/login?viewType=web',
+    797.0299999997223,
+    722.4200000000565
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/user-state/forecast?viewType=web',
+    204.76000000053318,
+    224.50000000026193
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/fcw/optin?viewType=web',
+    230.66999999900872,
+    259.2899999999645
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/default?viewType=web',
+    410.14499999982945,
+    283.12999999980093
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/starred-deals?viewType=web',
+    735.6899999995221,
+    688.7900000001537
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/filter-summary?viewType=web&includeAggregate=false&shownInOpportunities=true&populateMetadata=true',
+    1203.9850000001024,
+    1250.4599999992934
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/hierarchy/role-tree?viewType=web',
+    518.7949999999546,
+    256.75500000033935
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/user-state/grid-layout?viewType=web',
+    234.92500000065775,
+    214.2199999998411
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/user-state/opportunities?viewType=web',
+    524.9049999983981,
+    453.6049999987881
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/user-state/opportunities?viewType=web',
+    524.9049999983981,
+    453.6049999987881
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/saved-view/5c11ebdcda68d50001d2b1ef?viewType=web',
+    247.47000000024855,
+    201.48499999959313
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/pretty?viewType=web&applyLens=false&filter=%7B%22type%22:%22EXPRESSION%22,%22operator%22:%22AND%22,%22operands%22:[%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.ownerid%22,%22value%22:%7B%22scope%22:%22My+Reports%22,%22owners%22:[],%22roles%22:[]%7D%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.closedate%22,%22value%22:%7B%22ranges%22:[%22This+Quarter%22]%7D%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.stagename%22,%22value%22:[%22S2-Business+Validation%22,%22S3-Customer+Validation%22,%22S4-Manage+to+Close%22,%22Order+Submitted%22]%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.new_logo_arr__c%22,%22value%22:[%22%3E+0%22]%7D]%7D&mode=OPPORTUNITY_MODE',
+    268.9200000004348,
+    247.71999999938998
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/user-state/opportunities?viewType=web',
+    524.9049999983981,
+    453.6049999987881
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/opportunities/aggregate?viewType=web&mode=OPPORTUNITY_MODE&applyLens=false&filterBy=%7B%22type%22:%22EXPRESSION%22,%22operator%22:%22AND%22,%22operands%22:[%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.ownerid%22,%22value%22:%7B%22scope%22:%22My+Reports%22,%22owners%22:[],%22roles%22:[]%7D%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.closedate%22,%22value%22:%7B%22ranges%22:[%22This+Quarter%22]%7D%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.stagename%22,%22value%22:[%22S2-Business+Validation%22,%22S3-Customer+Validation%22,%22S4-Manage+to+Close%22,%22Order+Submitted%22]%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.new_logo_arr__c%22,%22value%22:[%22%3E+0%22]%7D]%7D&rollupBy=opportunity.new_logo_arr__c&sortBy=%7B%22field%22:%22opportunity.closedate%22,%22order%22:%22DESCENDING%22%7D&groupBy=%7B%22field%22:%22None%22%7D&saveFilterState=false',
+    613.6600000008912,
+    1282.6550000008865
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/opportunities/aggregate?viewType=web&mode=OPPORTUNITY_MODE&trendCutoff=7&applyLens=false&filterBy=%7B%22type%22:%22EXPRESSION%22,%22operator%22:%22AND%22,%22operands%22:[%7B%22type%22:%22EXPRESSION%22,%22operator%22:%22AND%22,%22operands%22:[%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.ownerid%22,%22value%22:%7B%22scope%22:%22My+Reports%22,%22owners%22:[],%22roles%22:[]%7D%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.closedate%22,%22value%22:%7B%22ranges%22:[%22This+Quarter%22]%7D%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.stagename%22,%22value%22:[%22S2-Business+Validation%22,%22S3-Customer+Validation%22,%22S4-Manage+to+Close%22,%22Order+Submitted%22]%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.new_logo_arr__c%22,%22value%22:[%22%3E+0%22]%7D]%7D]%7D&rollupBy=opportunity.new_logo_arr__c&changed=all&sortBy=%7B%22field%22:%22opportunity.closedate%22,%22order%22:%22DESCENDING%22%7D&groupBy=%7B%22field%22:%22None%22%7D&saveFilterState=false',
+    723.9700000009179,
+    980.6300000000192
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/opportunities?viewType=web&applyLens=false&filterBy=%7B%22type%22:%22EXPRESSION%22,%22operator%22:%22AND%22,%22operands%22:[%7B%22type%22:%22EXPRESSION%22,%22operator%22:%22AND%22,%22operands%22:[%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.ownerid%22,%22value%22:%7B%22scope%22:%22My+Reports%22,%22owners%22:[],%22roles%22:[]%7D%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.closedate%22,%22value%22:%7B%22ranges%22:[%22This+Quarter%22]%7D%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.stagename%22,%22value%22:[%22S2-Business+Validation%22,%22S3-Customer+Validation%22,%22S4-Manage+to+Close%22,%22Order+Submitted%22]%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.new_logo_arr__c%22,%22value%22:[%22%3E+0%22]%7D]%7D]%7D&sortBy=%7B%22field%22:%22opportunity.closedate%22,%22order%22:%22DESCENDING%22%7D&changed=all&trendCutoff=7&start=0&max=14&mode=OPPORTUNITY_MODE&mapResponse=true',
+    945.9499999993568,
+    1460.4749999998603
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/opportunities/describe/aggregate?viewType=web&applyLens=false&fields=opportunity.starred,opportunity.amount,opportunity.product__c,opportunity.services__c,opportunity.sow_amount__c,opportunity.net_new_arr__c,opportunity.upside__c,opportunity.deal_size_upside__c,opportunity.renewal_arr__c,opportunity.in_the_call__c,opportunity.new_logo__c,opportunity.pilot__c,opportunity.tech_qual__c,opportunity.acv__c,opportunity.new_logo_arr__c,opportunity.upsell_arr__c,opportunity.churn_arr__c,opportunity.renewal_churn__c,opportunity.team_activity__c,opportunity.ta_revenue__c,opportunity.contact_sync__c,opportunity.contact_sync_arr__c,opportunity.churn_forecast_arr__c,opportunity.time_to_deploy_from_close__c,opportunity.time_to_deploy_from_kickoff__c,opportunity.account.clari_nps__c,opportunity.deal_count__c,opportunity.deal_count1__c,opportunity.s1_to_closedwon__c,opportunity.revenue_confidence_assessment__c&filter=%7B%22type%22:%22EXPRESSION%22,%22operator%22:%22AND%22,%22operands%22:[%7B%22type%22:%22EXPRESSION%22,%22operator%22:%22AND%22,%22operands%22:[%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.ownerid%22,%22value%22:%7B%22scope%22:%22My+Reports%22,%22owners%22:[],%22roles%22:[]%7D%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.closedate%22,%22value%22:%7B%22ranges%22:[%22This+Quarter%22]%7D%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.stagename%22,%22value%22:[%22S2-Business+Validation%22,%22S3-Customer+Validation%22,%22S4-Manage+to+Close%22,%22Order+Submitted%22]%7D,%7B%22type%22:%22FIELD%22,%22id%22:%22opportunity.new_logo_arr__c%22,%22value%22:[%22%3E+0%22]%7D]%7D]%7D&changed=all&trendCutoff=7&mode=OPPORTUNITY_MODE&rollupBy=opportunity.new_logo_arr__c',
+    1392.1399999999267,
+    undefined
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/filter/filter-summary?viewType=web&includeAggregate=false&shownInOpportunities=true&populateMetadata=true',
+    1203.9850000001024,
+    1250.4599999992934
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/ds/predict?viewType=web&timezoneOffset=-420',
+    653.7100000005012,
+    591.0500000009051
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/invitation/status/0060W000012xxnxQAA?viewType=web&sfOppId=0060W000012xxnxQAA&sfOwnerId=0050W000006oOweQAE',
+    211.1849999982951,
+    199.93000000067696
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/opportunities/domains?viewType=web&sfOppId=0060W000012xxnxQAA',
+    242.2499999993306,
+    319.4199999998091
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/ds/predict?viewType=web&opportunity_id=0060W000012xxnxQAA&source=mongo&timezoneOffset=-420',
+    1566.5749999989202,
+    637.9649999998946
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/insights/0060W000012xxnxQAA/summary?viewType=web&orgLevel=false&sfOwnerId=0050W000006oOweQAE&timezoneOffset=-420',
+    1564.9000000012165,
+    1559.5800000010058
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/insights/0060W000012xxnxQAA/deal_metrics?viewType=web&amountField=opportunity.new_logo_arr__c&timezoneOffset=-420',
+    1561.839999998483,
+    634.7099999984493
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/frontend-timing?viewType=web',
+    218.29999999863503,
+    379.03000000005704
+  ],
+  [
+    'https://gateway.clari.com/api/v2core/frontend-timing?viewType=web',
+    218.29999999863503,
+    379.03000000005704
+  ]
+]
+
+        var data = google.visualization.arrayToDataTable(columns.concat(mapObj.slice(0,24)));
+        var data2 = google.visualization.arrayToDataTable(columns.concat(mapObj.slice(24)));
+
+        var options = {
+          title: 'Cloudfront benchmark',
+          // curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        var chart2 = new google.visualization.LineChart(document.getElementById('curve_chart2'));
+
+        chart.draw(data, options);
+        chart2.draw(data2, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 100%; height: 700px"></div>
+    <div id="curve_chart2" style="width: 100%; height: 700px"></div>
+  </body>
+</html>
