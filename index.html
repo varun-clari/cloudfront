@@ -390,9 +390,21 @@
 
         var chart3 = new google.visualization.LineChart(document.getElementById('curve_chart3'));
 
-        chart.draw(data, options);
-        chart2.draw(data2, options);
-        chart3.draw(data3, options);
+        chart.draw(data, {
+          title: 'Cloudfront benchmark 1',
+          // curveType: 'function',
+          legend: { position: 'bottom' }
+        });
+        chart2.draw(data2, {
+          title: 'Cloudfront benchmark 2',
+          // curveType: 'function',
+          legend: { position: 'bottom' }
+        });
+        chart3.draw(data3, {
+          title: 'Cloudfront benchmark 3',
+          // curveType: 'function',
+          legend: { position: 'bottom' }
+        });
       }
     </script>
   </head>
